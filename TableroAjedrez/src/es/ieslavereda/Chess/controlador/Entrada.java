@@ -20,36 +20,36 @@ public class Entrada {
 		}
 		public static String texto() {
 			Scanner sc = new Scanner(System.in);
-			String texto = sc.nextLine();
-			return texto;
+			String textos = sc.nextLine();
+			return textos;
 		}
 		
-		public static int[] obtenerCoordenada() {
+		public static char[] obtenerCoordenada() {
 			
-			String texto = obtenerCadena("Introduce una coordenada");
+			String texto = obtenerCadena("Introduce una coordenada con la pieza deseada");
 			while(!esCoordenada(texto)) {
-				texto = obtenerCadena("La cadena no tiene el formato correcto [A0]. Pruebe otra vez.");
+				texto = obtenerCadena("La cadena no tiene el formato correcto [A0] o esta fuera del tablero.");
 			}
 			
-			return stringToInt(texto.toUpperCase());
+			return stringToInt(texto);
 		}
 		private static boolean esCoordenada(String coordenada) {
 			coordenada=coordenada.toUpperCase();
 			if(coordenada.length()!=2)
 				return false;
-			if(!(coordenada.charAt(0)>='A' && coordenada.charAt(0)<='J'))
+			if(!(coordenada.charAt(0)>='A' && coordenada.charAt(0)<='H'))
 				return false;
-			if(!(coordenada.charAt(1)>='0' && coordenada.charAt(1)<='9'))
+			if(!(coordenada.charAt(1)>='1' && coordenada.charAt(1)<='8'))
 				return false;
 			return true;
 		}
 		
-		private static int[] stringToInt(String c) {
+		private static char[] stringToInt(String c) {
 			
-			int[] coordenada = new int[2];
+			char[] coordenada = new char[2];
 			
-			coordenada[0]= Integer.parseInt(String.valueOf(c.charAt(0)-'A'));
-			coordenada[1]= Integer.parseInt(String.valueOf(c.charAt(1)));
+			coordenada[0]= c.charAt(0);
+			coordenada[1]= c.charAt(1);
 			
 			return coordenada;
 			

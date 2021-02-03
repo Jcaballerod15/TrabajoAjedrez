@@ -3,6 +3,7 @@ package es.ieslavereda.tablerofichas;
 import tablero.Coordenadas;
 import tablero.Pieza;
 import tablero.Tablero;
+import es.ieslavereda.Chess.controlador.Entrada;
 import tablero.*;
 
 public class Test {
@@ -18,7 +19,9 @@ public class Test {
 
 		System.out.println(t.getCeldaAt(d).getPieza().getNextMovements());
 		System.out.print(t.print(Color.WHITE));
-		System.out.print(t.ChekBlancas());
+		System.out.println(t.ChekBlancas());
+//		System.out.println(Entrada.obtenerCoordenada());
+		System.out.println(t.getCeldaAt(d).contienePieza());
 	}
 	
 }

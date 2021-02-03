@@ -112,6 +112,22 @@ public class Tablero {
 	}
 	
 
+	public Pieza getReyNegro() {
+		return reyNegro;
+	}
+
+	public Pieza getReyBlanco() {
+		return reyBlanco;
+	}
+
+	public Lista<Pieza> getBlancasEliminadas() {
+		return blancasEliminadas;
+	}
+
+	public Lista<Pieza> getNegrasEliminadas() {
+		return negrasEliminadas;
+	}
+
 	public Lista<Pieza> getBlancas() {
 		return blancas;
 	}
