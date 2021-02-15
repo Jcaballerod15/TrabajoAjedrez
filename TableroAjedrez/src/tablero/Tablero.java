@@ -36,7 +36,7 @@ public class Tablero {
 		negras.addHead(new Knight(Color.BLACK, new Coordenadas('G', 8), this));
 		negras.addHead(new Rook(Color.BLACK, new Coordenadas('H', 8), this));
 		
-		negras.addHead(new Pawn(Color.BLACK, new Coordenadas('B', 4), this));
+//		negras.addHead(new Pawn(Color.BLACK, new Coordenadas('B', 4), this));
 		
 		for(int i =0;i<tablero.length; i++) {
 			negras.addHead(new Pawn(Color.BLACK, new Coordenadas(letras, 7), this));
@@ -48,7 +48,7 @@ public class Tablero {
 			letras++;
 		}
 		
-		blancas.addHead(new Pawn(Color.WHITE, new Coordenadas('C', 3), this));
+//		blancas.addHead(new Pawn(Color.WHITE, new Coordenadas('C', 3), this));
 		
 		blancas.addHead(new Rook(Color.WHITE, new Coordenadas('A', 1), this));
 		blancas.addHead(new Knight(Color.WHITE, new Coordenadas('B', 1), this));
