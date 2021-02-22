@@ -10,11 +10,12 @@ public class Test {
 
 	public static void main(String[] args) {
 		Tablero t = new Tablero();
-		Coordenadas d = new Coordenadas('B',4);
-		Coordenadas o = new Coordenadas('C',3);
+		Coordenadas d = new Coordenadas('A',4);
+		Coordenadas o = new Coordenadas('A',2);
 		
 		
 		t.getCeldaAt(o).getPieza().moveTo(d);
+		
 		
 
 		System.out.println(t.getCeldaAt(d).getPieza().getNextMovements());

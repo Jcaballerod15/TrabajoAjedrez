@@ -22,9 +22,9 @@ public class ControladorJuego {
 
 	public void go() {
 		do {
-		char[] aux ;
-		Coordenadas c = null;
-		Coordenadas c1 = null;
+		Coordenadas c;
+		Coordenadas c1;
+		int fin = 0;
 		switch (turno) {
 		case WHITE:
 			do {
@@ -32,18 +32,20 @@ public class ControladorJuego {
 				if (tablero.ChekNegras()) {
 					System.out.println("Su rey esta en JAQUE");
 				}
-				aux=Entrada.obtenerCoordenada();
-				c = new Coordenadas(aux[0], aux[1]);
+				
+				c = Entrada.obtenerCoordenada("Introduce una coordenada con la pieza deseada");
 				if (tablero.getCeldaAt(c).contienePieza()) {
 					if (tablero.getCeldaAt(c).getPieza().getColor() == turno) {
 						System.out.println();
-						c1 = new Coordenadas(Entrada.obtenerCoordenada()[0], Entrada.obtenerCoordenada()[1]);
+						c1 = Entrada.obtenerCoordenada("Introduce una coordenada con la posicion deseada");
 						tablero.getCeldaAt(c).getPieza().moveTo(c1);
+						fin = 1;
 					} else
 						System.out.println("Seleccione una pieza de su color");
-				} else
+				} else 
 					System.out.println("Seleccione un pieza");
-			} while (c1 == null);
+			} while (fin == 0);
+			fin = 0;
 			cambiarTurno();
 			break;
 		case BLACK:
@@ -52,18 +54,18 @@ public class ControladorJuego {
 				if (tablero.ChekBlancas()) {
 					System.out.println("Su rey esta en JAQUE");
 				}
-				aux=Entrada.obtenerCoordenada();
-				c = new Coordenadas(aux[0], aux[1]);
+				c = Entrada.obtenerCoordenada("Introduce una coordenada con la pieza deseada");
 				if (tablero.getCeldaAt(c).contienePieza()) {
 					if (tablero.getCeldaAt(c).getPieza().getColor() == turno) {
 						System.out.println();
-						c1 = new Coordenadas(Entrada.obtenerCoordenada()[0], Entrada.obtenerCoordenada()[1]);
+						c1 = Entrada.obtenerCoordenada("Introduce una coordenada con la posicion deseada");
 						tablero.getCeldaAt(c).getPieza().moveTo(c1);
+						fin =1;
 					} else
 						System.out.println("Seleccione una pieza de su color");
 				} else
 					System.out.println("Seleccione un pieza");
-			} while (c1 == null);
+			} while (fin == 0);
 			cambiarTurno();
 			break;
 		}

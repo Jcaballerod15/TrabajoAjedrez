@@ -49,7 +49,15 @@ public class Coordenadas {
 	public int getNumero() {
 		return numero;
 	}
+	
 
+	public void setLetrasT(char letrasT) {
+		this.letrasT = letrasT;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
 
 	public char getLetra() {
 		return letrasT;

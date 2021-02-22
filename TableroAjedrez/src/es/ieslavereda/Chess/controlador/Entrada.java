@@ -2,6 +2,8 @@ package es.ieslavereda.Chess.controlador;
 
 import java.util.Scanner;
 
+import tablero.Coordenadas;
+
 public class Entrada {
 	// Muestra un mensaje pasado el parametro msg y
 		// devuelve un String de longitud = 2
@@ -24,14 +26,14 @@ public class Entrada {
 			return textos;
 		}
 		
-		public static char[] obtenerCoordenada() {
+		public static Coordenadas obtenerCoordenada(String frase) {
 			
-			String texto = obtenerCadena("Introduce una coordenada con la pieza deseada");
+			String texto = obtenerCadena(frase);
 			while(!esCoordenada(texto)) {
 				texto = obtenerCadena("La cadena no tiene el formato correcto [A0] o esta fuera del tablero.");
 			}
 			
-			return stringToInt(texto);
+			return new Coordenadas(texto.charAt(0),Integer.parseInt(texto.substring(1)));
 		}
 		private static boolean esCoordenada(String coordenada) {
 			coordenada=coordenada.toUpperCase();
@@ -44,14 +46,14 @@ public class Entrada {
 			return true;
 		}
 		
-		private static char[] stringToInt(String c) {
-			
-			char[] coordenada = new char[2];
-			
-			coordenada[0]= c.charAt(0);
-			coordenada[1]= c.charAt(1);
-			
-			return coordenada;
-			
-		}
+//		private static char[] stringToInt(String c) {
+//			
+//			char[] coordenada = new char[2];
+//			
+//			coordenada[0]= c.charAt(0);
+//			coordenada[1]= c.charAt(1);
+//			
+//			return coordenada;
+//			
+//		}
 }
