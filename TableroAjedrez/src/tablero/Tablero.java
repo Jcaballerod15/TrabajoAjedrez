@@ -188,12 +188,12 @@ public class Tablero {
 	}
 
 	private String printAsBlack() {
-		int numero =9;
+		int numero =0;
 		String salida="";
-		salida += "   A   B   C   D   E   F   G   H\n";
+		salida += "   H   G   F   E   D   C   B   A\n";
 		salida += " ╔═══╤═══╤═══╤═══╤═══╤═══╤═══╤═══╗ \n";
 		for (int fila = tablero.length-1; fila >=0; fila--) {
-			salida += numero-=1;
+			salida += numero+=1;
 			salida +="║";
 			for (int col =tablero[0].length-1 ; col >= 0; col--) {
 				if (col == 0)

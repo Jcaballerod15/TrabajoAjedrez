@@ -71,9 +71,9 @@ public class ControladorJuego {
 		}
 	}while(!tablero.getBlancasEliminadas().contiene(tablero.getReyBlanco()) && !tablero.getNegrasEliminadas().contiene(tablero.getReyNegro()));
 		if(tablero.getBlancasEliminadas().contiene(tablero.getReyBlanco())) {
-			System.out.println("El ganador es el jugador: " + jugadorNegras);
+			System.out.println("El ganador es el jugador: " + jugadorNegras.getNombre());
 		}else if(tablero.getNegrasEliminadas().contiene(tablero.getReyNegro())) {
-			System.out.println("El ganador es el jugador: " + jugadorBlancas);
+			System.out.println("El ganador es el jugador: " + jugadorBlancas.getNombre());
 		}
 	}
 

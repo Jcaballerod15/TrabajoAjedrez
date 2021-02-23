@@ -23,7 +23,7 @@ public class Entrada {
 		public static String texto() {
 			Scanner sc = new Scanner(System.in);
 			String textos = sc.nextLine();
-			return textos;
+			return textos.toUpperCase();
 		}
 		
 		public static Coordenadas obtenerCoordenada(String frase) {
